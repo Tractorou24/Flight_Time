@@ -13,9 +13,13 @@ public:
     setHoursWindow(QWidget* parent = Q_NULLPTR);
 
 private slots:
+    void returnMainMenuFromSetHours();
+
+signals:
+    void close_me();
 
 private:
-    QPushButton* mainQuit;
+    QPushButton* returnMain;
 };
 
 #endif

@@ -22,32 +22,73 @@
       <Extensions>qrc;*</Extensions>
       <ParseFiles>false</ParseFiles>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <QtRcc Include="mainWindow.qrc">
-      <Filter>Resource Files</Filter>
-    </QtRcc>
-    <QtUic Include="mainWindow.ui">
-      <Filter>Resource Files</Filter>
-    </QtUic>
-    <QtMoc Include="mainWindow.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
-    <ClCompile Include="mainWindow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <Filter Include="Source Files\seeHoursWindow">
+      <UniqueIdentifier>{cd669eb1-638f-49b6-8394-b19e791fc010}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\seeOptionsWindow">
+      <UniqueIdentifier>{72afb748-91aa-420b-9e45-1957c4dc54f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\setHoursWindow">
+      <UniqueIdentifier>{e293864c-5c64-46fa-ae24-c09f42875b04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\mainWindow">
+      <UniqueIdentifier>{36db98c6-90a6-4913-b436-ee945da58df9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\mainWindow">
+      <UniqueIdentifier>{405265e6-d32c-4df3-9ca8-86cc6bdddcb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\setHoursWindow">
+      <UniqueIdentifier>{dff92b39-881c-4b3f-acbb-f986af671959}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\seeOptionsWindow">
+      <UniqueIdentifier>{876e0de5-c27c-4079-bf50-a3525ecf4609}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\seeHoursWindow">
+      <UniqueIdentifier>{e813eb60-3884-4e5b-a77a-2d5e6d8b19c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\mainWindow">
+      <UniqueIdentifier>{9e83a6fd-80a1-403e-87aa-e5909ef0f431}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="setHoursWindow.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="mainWindow\mainWindow.cpp">
+      <Filter>Source Files\mainWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="setHoursWindow\setHoursWindow.cpp">
+      <Filter>Source Files\setHoursWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="seeOptionsWindow\seeOptionsWindow.cpp">
+      <Filter>Source Files\seeOptionsWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="seeHoursWindow\seeHoursWindow.cpp">
+      <Filter>Source Files\seeHoursWindow</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="setHoursWindow.h">
-      <Filter>Header Files</Filter>
+    <QtRcc Include="mainWindow\mainWindow.qrc">
+      <Filter>Resource Files\mainWindow</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="mainWindow\mainWindow.ui">
+      <Filter>Resource Files\mainWindow</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="mainWindow\mainWindow.h">
+      <Filter>Header Files\mainWindow</Filter>
+    </QtMoc>
+    <QtMoc Include="setHoursWindow\setHoursWindow.h">
+      <Filter>Header Files\setHoursWindow</Filter>
+    </QtMoc>
+    <QtMoc Include="seeOptionsWindow\seeOptionsWindow.h">
+      <Filter>Header Files\seeOptionsWindow</Filter>
+    </QtMoc>
+    <QtMoc Include="seeHoursWindow\seeHoursWindow.h">
+      <Filter>Header Files\seeHoursWindow</Filter>
     </QtMoc>
   </ItemGroup>
 </Project>

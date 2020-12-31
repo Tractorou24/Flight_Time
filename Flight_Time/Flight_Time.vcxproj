@@ -50,11 +50,17 @@
     <ClCompile>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
+    <Link>
+      <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
+    <Link>
+      <AdditionalOptions>/FORCE:MULTIPLE %(AdditionalOptions)</AdditionalOptions>
+    </Link>
   </ItemDefinitionGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>QT V6 MSVC2019</QtInstall>
@@ -96,15 +102,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="setHoursWindow.cpp" />
-    <QtRcc Include="mainWindow.qrc" />
-    <QtUic Include="mainWindow.ui" />
-    <QtMoc Include="mainWindow.h" />
-    <ClCompile Include="mainWindow.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainWindow\mainWindow.cpp" />
+    <ClCompile Include="seeHoursWindow\seeHoursWindow.cpp" />
+    <ClCompile Include="seeOptionsWindow\seeOptionsWindow.cpp" />
+    <ClCompile Include="setHoursWindow\setHoursWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="setHoursWindow.h" />
+    <QtRcc Include="mainWindow\mainWindow.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="mainWindow\mainWindow.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="mainWindow\mainWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="setHoursWindow\setHoursWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="seeOptionsWindow\seeOptionsWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="seeHoursWindow\seeHoursWindow.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
