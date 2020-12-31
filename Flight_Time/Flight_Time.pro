@@ -3,7 +3,7 @@
 # ------------------------------------------------------
 
 TEMPLATE = app
-TARGET = Flight_Time
+TARGET = "Flight Time Calculator"
 DESTDIR = ../x64/Debug
 CONFIG += debug console
 LIBS += -L"."

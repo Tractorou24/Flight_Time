@@ -91,4 +91,27 @@
       <Filter>Header Files\seeHoursWindow</Filter>
     </QtMoc>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Flight_Time.pri">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Flight_Time.pro">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Flight_Time.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

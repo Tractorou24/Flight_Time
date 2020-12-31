@@ -126,6 +126,19 @@
   <ItemGroup>
     <QtMoc Include="seeHoursWindow\seeHoursWindow.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Flight_Time.pri" />
+    <None Include="Flight_Time.pro" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Flight_Time.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon.ico" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
     <Import Project="$(QtMsBuild)\qt.targets" />
