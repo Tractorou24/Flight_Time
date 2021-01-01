@@ -105,6 +105,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainWindow\mainWindow.cpp" />
     <ClCompile Include="seeHoursWindow\seeHoursWindow.cpp" />
+    <ClCompile Include="seeOptionsWindow\database.cpp" />
     <ClCompile Include="seeOptionsWindow\seeOptionsWindow.cpp" />
     <ClCompile Include="setHoursWindow\setHoursWindow.cpp" />
   </ItemGroup>
@@ -132,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="seeOptionsWindow\database.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Flight_Time.rc" />

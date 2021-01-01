@@ -1,1 +1,3 @@
 // Preferences file : DO NOT ADD OR REMOVE LINES !
+
+favorite_database = 

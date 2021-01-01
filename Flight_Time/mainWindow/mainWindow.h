@@ -13,7 +13,6 @@ class mainWindow : public QMainWindow
 
 public:
     mainWindow(QWidget *parent = Q_NULLPTR);
-    void SetButtonBgImage(QPushButton* pButton, std::string bgPath);
     std::string QStrToStr(QString QStr);
     QString StrToQStr(std::string str);
 

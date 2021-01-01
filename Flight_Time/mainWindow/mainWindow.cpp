@@ -32,10 +32,6 @@ mainWindow::mainWindow(QWidget *parent)
     QObject::connect(mainQuit, SIGNAL(clicked()), qApp, SLOT(quit()));
 }
 
-void mainWindow::SetButtonBgImage(QPushButton* pButton, std::string bgPath)
-{
-}
-
 void mainWindow::addHours()
 {
     setHourWindow = new setHoursWindow(this);
@@ -48,6 +44,7 @@ void mainWindow::addHours()
         setHourWindow->exec();
     }
     this->show();
+    delete setHourWindow;
 }
 
 void mainWindow::closeChild()
@@ -69,6 +66,7 @@ void mainWindow::showHours()
         seeHourWindow->exec();
     }
     this->show();
+    delete seeHourWindow;
 }
 
 void mainWindow::seeOptions()
@@ -83,6 +81,7 @@ void mainWindow::seeOptions()
         seeOptionWindow->exec();
     }
     this->show();
+    delete seeOptionWindow;
 }
 
 std::string mainWindow::QStrToStr(QString QStr)

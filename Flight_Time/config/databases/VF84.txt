@@ -1,0 +1,26 @@
+// DATABASE : DO NOT EDIT, DELETE OR REMOVE LINES
+
+206 Tracto {
+   informations {
+       Modex : 206
+       POKER 2020
+       ENTREE 12/10/2020
+   }
+}
+
+206 Orion {
+   informations {
+       Modex : 206
+       POKER 2020
+       ENTREE 12/10/2020
+   }
+}
+
+200 Bullit {
+   informations {
+       Modex : 206
+       POKER 2020
+       ENTREE 12/10/2020
+   }
+}
+
