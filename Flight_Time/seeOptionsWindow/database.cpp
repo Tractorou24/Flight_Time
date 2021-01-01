@@ -26,7 +26,6 @@ std::string database::addDatabase(std::string dbName)
     {
         return "Database already exist !";
     }
-    std::cout << backupPath << newPath << std::endl;
     std::filesystem::copy_file(backupPath, newPath);
     return "OK";
 }
@@ -72,7 +71,25 @@ std::string database::addPlayerToDatabase(std::string databaseName, std::string 
         file << "       " + (playerInformations[i]) << std::endl;
     }
     file << "   }" << std::endl;
-    file << "}" << std::endl << std::endl;
+    file << "   caseIDeparture = " << std::endl;
+    file << "   caseII / IIIDeparture = " << std::endl;
+    file << "   caseIArrival = " << std::endl;
+    file << "   caseII / IIIArrival = " << std::endl;
+    file << "   bvr = " << std::endl;
+    file << "   bfm = " << std::endl;
+    file << "   A/AGuns = " << std::endl;
+    file << "   intercept = " << std::endl;
+    file << "   dayAAR = " << std::endl;
+    file << "   night AAR = " << std::endl;
+    file << "   laserGuidedBombs = " << std::endl;
+    file << "   unguidedBombs = " << std::endl;
+    file << "   tald = " << std::endl;
+    file << "   rockets = " << std::endl;
+    file << "   A/GGuns = " << std::endl;
+    file << "   tacturn = " << std::endl;
+    file << "   training = " << std::endl;
+    file << "   missions = " << std::endl;
+    file << "}" << std::endl << std::endl;;
     file.close();
 
     return "OK";
@@ -93,7 +110,7 @@ std::string database::removePlayerFromDatabase(std::string databaseName, std::st
     }
 
     std::string line;
-    std::ofstream outfile("temp.txt");
+    std::ofstream outfile("temp/tempDB.txt");
     bool stopDeleting = true;
     while (std::getline(file, line))
     {
@@ -110,6 +127,15 @@ std::string database::removePlayerFromDatabase(std::string databaseName, std::st
             }
         }
     }
+    file.close();
+    outfile.close();
+
+    const std::string backupPath = "temp/tempDB.txt";
+    const std::string newPath = "config/databases/VF84.txt";
+    std::remove(newPath.c_str());
+    std::filesystem::copy_file(backupPath, newPath);
+    std::remove(backupPath.c_str());
+
     return "OK";
 }
 

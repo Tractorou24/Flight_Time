@@ -6,14 +6,24 @@
        POKER 2020
        ENTREE 12/10/2020
    }
-}
-
-206 Orion {
-   informations {
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-   }
+   caseIDeparture = 
+   caseII / IIIDeparture = 
+   caseIArrival = 
+   caseII / IIIArrival = 
+   bvr = 
+   bfm = 
+   A/AGuns = 
+   intercept = 
+   dayAAR = 
+   night AAR = 
+   laserGuidedBombs = 
+   unguidedBombs = 
+   tald = 
+   rockets = 
+   A/GGuns = 
+   tacturn = 
+   training = 
+   missions = 
 }
 
 200 Bullit {
@@ -22,5 +32,23 @@
        POKER 2020
        ENTREE 12/10/2020
    }
+   caseIDeparture = 
+   caseII / IIIDeparture = 
+   caseIArrival = 
+   caseII / IIIArrival = 
+   bvr = 
+   bfm = 
+   A/AGuns = 
+   intercept = 
+   dayAAR = 
+   night AAR = 
+   laserGuidedBombs = 
+   unguidedBombs = 
+   tald = 
+   rockets = 
+   A/GGuns = 
+   tacturn = 
+   training = 
+   missions = 
 }
 
