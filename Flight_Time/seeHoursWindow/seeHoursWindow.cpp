@@ -6,10 +6,10 @@
 seeHoursWindow::seeHoursWindow(QWidget* parent)
     : QDialog(parent)
 {
-    setFixedSize(720, 480);
+    setFixedSize(1280, 720);
 
-    returnMain = new QPushButton("Quitter", this);
-    returnMain->setGeometry(620, 430, 100, 50);
+    returnMain = new QPushButton("Retour", this);
+    returnMain->setGeometry(1180, 670, 100, 50);
 
     QObject::connect(returnMain, SIGNAL(clicked()), this, SLOT(returnMainMenuFromSeeHours()));
 }

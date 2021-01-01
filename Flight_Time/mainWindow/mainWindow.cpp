@@ -13,12 +13,15 @@ mainWindow::mainWindow(QWidget *parent)
 
     setHours = new QPushButton("Ajouter des heures", this);
     setHours->setGeometry(80, 160, 160, 160);
+    setHours->setStyleSheet("QPushButton{border-image: url(images/mainWindow/setHours.png)}");
 
     seeHours = new QPushButton("Voir les heures", this);
     seeHours->setGeometry(280, 160, 160, 160);
+    seeHours->setStyleSheet("QPushButton{border-image: url(images/mainWindow/seeHours.jpg)}");
 
     options = new QPushButton("Options", this);
     options->setGeometry(480, 160, 160, 160);
+    options->setStyleSheet("QPushButton{border-image: url(images/mainWindow/seeOptions.png)}");
 
     mainQuit = new QPushButton("Quitter", this);
     mainQuit->setGeometry(620, 430, 100, 50);
@@ -27,6 +30,10 @@ mainWindow::mainWindow(QWidget *parent)
     QObject::connect(seeHours, SIGNAL(clicked()), this, SLOT(showHours()));
     QObject::connect(options, SIGNAL(clicked()), this, SLOT(seeOptions()));
     QObject::connect(mainQuit, SIGNAL(clicked()), qApp, SLOT(quit()));
+}
+
+void mainWindow::SetButtonBgImage(QPushButton* pButton, std::string bgPath)
+{
 }
 
 void mainWindow::addHours()
@@ -76,4 +83,14 @@ void mainWindow::seeOptions()
         seeOptionWindow->exec();
     }
     this->show();
+}
+
+std::string mainWindow::QStrToStr(QString QStr)
+{
+    return QStr.toLocal8Bit().constData();
+}
+
+QString mainWindow::StrToQStr(std::string str)
+{
+    return QString::fromStdString(str);
 }
