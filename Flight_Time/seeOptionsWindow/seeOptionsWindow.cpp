@@ -20,9 +20,7 @@ seeOptionsWindow::seeOptionsWindow(QWidget* parent)
     infos.push_back("POKER 2020");
     infos.push_back("ENTREE 12/10/2020");
     db.addPlayerToDatabase("VF84", "206 Tracto", infos);
-    db.addPlayerToDatabase("VF84", "206 Orion", infos);
-    db.addPlayerToDatabase("VF84", "200 Bullit", infos);
-    db.removePlayerFromDatabase("VF84", "206 Orion");
+    db.addAnHourInDatabase("VF84", "206 Tracto", "allTime", 2.0);
 
     QObject::connect(returnMain, SIGNAL(clicked()), this, SLOT(returnMainMenuFromOptions()));
 }

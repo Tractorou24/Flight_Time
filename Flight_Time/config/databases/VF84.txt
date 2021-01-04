@@ -6,49 +6,30 @@
        POKER 2020
        ENTREE 12/10/2020
    }
-   caseIDeparture = 
-   caseII / IIIDeparture = 
-   caseIArrival = 
-   caseII / IIIArrival = 
-   bvr = 
-   bfm = 
-   A/AGuns = 
-   intercept = 
-   dayAAR = 
-   night AAR = 
-   laserGuidedBombs = 
-   unguidedBombs = 
-   tald = 
-   rockets = 
-   A/GGuns = 
-   tacturn = 
-   training = 
-   missions = 
-}
-
-200 Bullit {
-   informations {
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
+   heures { 
+       allTime = 0.0
+       dayTime = 0.0
+       nightTime = 0.0
+       totalAA = 0.0
+       totalAG = 0.0
    }
-   caseIDeparture = 
-   caseII / IIIDeparture = 
-   caseIArrival = 
-   caseII / IIIArrival = 
-   bvr = 
-   bfm = 
-   A/AGuns = 
-   intercept = 
-   dayAAR = 
-   night AAR = 
-   laserGuidedBombs = 
-   unguidedBombs = 
-   tald = 
-   rockets = 
-   A/GGuns = 
-   tacturn = 
-   training = 
-   missions = 
+   caseIDeparture = 01/01/2000a
+   caseIIorIIIDeparture = 01/01/2000b
+   caseIArrival = 01/01/2000c
+   caseIIorIIIArrival = 01/01/2000d
+   bvr = 01/01/2000
+   bfm = 01/01/2000
+   AAGuns = 01/01/2000
+   intercept = 01/01/2000
+   dayAAR = 01/01/2000
+   nightAAR = 01/01/2000
+   laserGuidedBombs = 01/01/2000
+   unguidedBombs = 01/01/2000
+   tald = 01/01/2000
+   rockets = 01/01/2000
+   AGGuns = 01/01/2000
+   tacturn = 01/01/2000
+   training = 01/01/2000
+   missions = 01/01/2000
 }
 
