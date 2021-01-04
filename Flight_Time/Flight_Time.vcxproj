@@ -102,7 +102,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="general\main.cpp" />
+    <ClCompile Include="general\programSettings.cpp" />
     <ClCompile Include="mainWindow\mainWindow.cpp" />
     <ClCompile Include="seeHoursWindow\seeHoursWindow.cpp" />
     <ClCompile Include="seeOptionsWindow\database.cpp" />
@@ -132,6 +133,7 @@
     <None Include="Flight_Time.pro" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="general\programSettings.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="seeOptionsWindow\database.h" />
   </ItemGroup>

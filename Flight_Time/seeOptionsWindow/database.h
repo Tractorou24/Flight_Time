@@ -4,10 +4,11 @@
 #include <vector>
 #include <string>
 
+std::vector<std::string> getAllAvailableDatabases();
+
 class database
 {
 public:
-	std::vector<std::string> getAllAvailableDatabases();
 	std::string addDatabase(std::string dbName);
 	std::string deleteDatabase(std::string dbName);
 	std::string addPlayerToDatabase(std::string databaseName, std::string playerName, std::vector<std::string> playerInformations);
@@ -15,9 +16,9 @@ public:
 	std::string addAnHourInDatabase(std::string databaseName, std::string playerName, std::string parameter, double nbHour);
 	std::string addADateInDatabase(std::string databaseName, std::string playerName, std::string parameter, std::string date);
 	std::string getNewDate();
+	bool dbExist(const std::string name);
 
 private:
-	bool dbExist(const std::string name);
 	bool checkIfPlayerExistInDatabase(std::string databaseName, std::string playerName);
 	std::string loadPlayer(std::string databaseName, std::string playerName);
 	std::string updatePlayer(std::string databaseName, std::string playerName);
@@ -51,7 +52,6 @@ private:
 		std::string missions;
 	};
 
-	std::string modifyPlayerName;
 	struct playerInformations player;
 };
 

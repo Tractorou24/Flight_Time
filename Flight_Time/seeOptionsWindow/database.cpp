@@ -8,7 +8,7 @@
 #include <ctime>
 #include "database.h"
 
-std::vector<std::string> database::getAllAvailableDatabases()
+std::vector<std::string> getAllAvailableDatabases()
 {
     std::vector<std::string> dbList;
     std::string path = "config/databases";
@@ -291,7 +291,6 @@ std::string database::getNewDate()
 
     return std::to_string(ltm->tm_mday) + "/" + std::to_string(ltm->tm_mon + 1) + "/" + std::to_string(1900 + ltm->tm_year);
 }
-
 
 
 
