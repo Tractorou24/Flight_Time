@@ -12,14 +12,15 @@ public:
 	std::string deleteDatabase(std::string dbName);
 	std::string addPlayerToDatabase(std::string databaseName, std::string playerName, std::vector<std::string> playerInformations);
 	std::string removePlayerFromDatabase(std::string databaseName, std::string playerName);
-	std::string addAnHourInDatabase(std::string databaseName, std::string playerName, std::string parameter, int nbHour);
+	std::string addAnHourInDatabase(std::string databaseName, std::string playerName, std::string parameter, double nbHour);
+	std::string addADateInDatabase(std::string databaseName, std::string playerName, std::string parameter, std::string date);
+	std::string getNewDate();
 
 private:
 	bool dbExist(const std::string name);
 	bool checkIfPlayerExistInDatabase(std::string databaseName, std::string playerName);
 	std::string loadPlayer(std::string databaseName, std::string playerName);
-	//std::string getParameterLineNumber(std::string databaseName, std::string playerName, std::string parameter);
-	std::string getNewDate();
+	std::string updatePlayer(std::string databaseName, std::string playerName);
 
 	struct playerInformations {
 		std::vector<std::string> informations;

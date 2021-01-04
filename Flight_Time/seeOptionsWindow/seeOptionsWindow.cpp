@@ -21,6 +21,7 @@ seeOptionsWindow::seeOptionsWindow(QWidget* parent)
     infos.push_back("ENTREE 12/10/2020");
     db.addPlayerToDatabase("VF84", "206 Tracto", infos);
     db.addAnHourInDatabase("VF84", "206 Tracto", "allTime", 2.0);
+    db.addADateInDatabase("VF84", "206 Tracto", "caseIDeparture", "2/10/2019");
 
     QObject::connect(returnMain, SIGNAL(clicked()), this, SLOT(returnMainMenuFromOptions()));
 }
