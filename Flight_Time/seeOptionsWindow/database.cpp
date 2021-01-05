@@ -21,6 +21,30 @@ std::vector<std::string> getAllAvailableDatabases()
     return dbList;
 }
 
+std::vector<std::string> database::getAllAvailablePlayersInDatabase(std::string databaseName)
+{
+    std::vector<std::string> result;
+    if (!dbExist(databaseName))
+    {
+        return result;
+    }
+
+    std::ifstream file;
+    file.open(("config/databases/" + databaseName + ".txt").c_str());
+    if (file.is_open())
+    {
+        std::string line;
+        while (std::getline(file, line))
+        {
+            if ((line != "") && (line != "}") && (line.substr(line.length() - 2, line.length()) == " {") && (line != "   informations {"))
+            {
+                result.push_back(line.substr(0, line.size()-2));
+            }
+        }
+    }
+    return result;
+}
+
 std::string database::addDatabase(std::string dbName)
 {
     if (dbExist(dbName))

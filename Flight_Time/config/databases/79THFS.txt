@@ -1,112 +1,48 @@
 // DATABASE : DO NOT EDIT, DELETE OR REMOVE LINES
 
-206 Tracto {
+Marco {
    informations {
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
-       Modex : 206
-       POKER 2020
-       ENTREE 12/10/2020
+       ENTREE
    }
    heures { 
-       allTime = 12.000000
-       dayTime = 0.000000
-       nightTime = 0.000000
-       totalAA = 0.000000
-       totalAG = 0.000000
+       allTime = 0.0
+       dayTime = 0.0
+       nightTime = 0.0
+       totalAA = 0.0
+       totalAG = 0.0
    }
-   caseIDeparture = 2/10/2019
+   caseIDeparture = 01/01/2000
+   caseIIorIIIDeparture = 01/01/2000
+   caseIArrival = 01/01/2000
+   caseIIorIIIArrival = 01/01/2000
+   bvr = 01/01/2000
+   bfm = 01/01/2000
+   AAGuns = 01/01/2000
+   intercept = 01/01/2000
+   dayAAR = 01/01/2000
+   nightAAR = 01/01/2000
+   laserGuidedBombs = 01/01/2000
+   unguidedBombs = 01/01/2000
+   tald = 01/01/2000
+   rockets = 01/01/2000
+   AGGuns = 01/01/2000
+   tacturn = 01/01/2000
+   training = 01/01/2000
+   missions = 01/01/2000
+}
+
+Raph {
+   informations {
+       ENTREE
+   }
+   heures { 
+       allTime = 0.0
+       dayTime = 0.0
+       nightTime = 0.0
+       totalAA = 0.0
+       totalAG = 0.0
+   }
+   caseIDeparture = 01/01/2000
    caseIIorIIIDeparture = 01/01/2000
    caseIArrival = 01/01/2000
    caseIIorIIIArrival = 01/01/2000

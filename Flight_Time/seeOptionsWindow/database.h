@@ -16,6 +16,7 @@ public:
 	std::string addAnHourInDatabase(std::string databaseName, std::string playerName, std::string parameter, double nbHour);
 	std::string addADateInDatabase(std::string databaseName, std::string playerName, std::string parameter, std::string date);
 	std::string getNewDate();
+	std::vector<std::string> getAllAvailablePlayersInDatabase(std::string databaseName);
 	bool dbExist(const std::string name);
 
 private:

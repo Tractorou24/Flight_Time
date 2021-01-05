@@ -5,7 +5,9 @@
 #include <QComboBox>
 #include <QLineEdit>
 #include <QMessageBox>
+#include <QTextEdit>
 #include <iostream>
+#include <vector>
 #include "../mainWindow/mainWindow.h"
 #include "../setHoursWindow/setHoursWindow.h"
 #include "../general/programSettings.h"
@@ -142,13 +144,119 @@ void seeOptionsWindow::deleteDeleteDB()
 
 void seeOptionsWindow::addPlayerInDB()
 {
+    addPlayerRequestBox = new QDialog(this);
+    addPlayerRequestBox->setFixedSize(500, 300);
+    addPlayerRequestBox->setWindowTitle("Add a player to database :");
 
+    std::vector<std::string> availableDatabases = getAllAvailableDatabases();
+    addPlayerInDbBox = new QComboBox(addPlayerRequestBox);
+    addPlayerInDbBox->setGeometry(40, 180, 200, 25);
+    for (int i = 0; i < availableDatabases.size(); i++)
+    {
+        addPlayerInDbBox->addItem(availableDatabases[i].c_str());
+    }
+    addPlayerInDbBox->setCurrentText(getSelectedDatabase().c_str());
+    addPlayerInDbBox->show();
+
+    addPlayerInfosTextBox = new QTextEdit(addPlayerRequestBox);
+    addPlayerInfosTextBox->setGeometry(280, 60, 200, 160);
+    addPlayerInfosTextBox->show();
+
+    addPlayerPlayerName = new QLineEdit(addPlayerRequestBox);
+    addPlayerPlayerName->setGeometry(65, 90, 130, 25);
+    addPlayerPlayerName->show();
+
+    addPlayerInDbOk = new QPushButton("Ok", addPlayerRequestBox);
+    addPlayerInDbOk->setGeometry(100, 240, 50, 25);
+
+    addPlayerInDbCancel = new QPushButton("Cancel", addPlayerRequestBox);
+    addPlayerInDbCancel->setGeometry(350, 240, 50, 25);
+
+    QObject::connect(addPlayerInDbOk, SIGNAL(clicked()), this, SLOT(addPlayer()));
+    QObject::connect(addPlayerInDbCancel, SIGNAL(clicked()), this, SLOT(deleteAddPlayer()));
+
+    addPlayerRequestBox->exec();
 }
+
+void seeOptionsWindow::addPlayer() {
+    addPlayerPlayerInfos = separateStringForVector(addPlayerInfosTextBox->toPlainText().toStdString());
+    db.addPlayerToDatabase(addPlayerInDbBox->currentText().toStdString(), addPlayerPlayerName->text().toStdString(), addPlayerPlayerInfos);
+    deleteAddPlayer();
+    addPlayerInDB();
+}
+
+void seeOptionsWindow::deleteAddPlayer()
+{
+    addPlayerRequestBox->close();
+    delete addPlayerRequestBox, addPlayerInDbBox, addPlayerInDbOk, addPlayerInDbCancel, addPlayerInfosTextBox, addPlayerPlayerName;
+}
+
 
 void seeOptionsWindow::rmPlayerFromDB()
 {
+    rmPlayerRequestBox = new QDialog(this);
+    rmPlayerRequestBox->setFixedSize(500, 300);
+    rmPlayerRequestBox->setWindowTitle("Remove a player from database :");
 
+    std::vector<std::string> availableDatabases = getAllAvailableDatabases();
+    rmPlayerFromDbBox = new QComboBox(rmPlayerRequestBox);
+    rmPlayerFromDbBox->setGeometry(40, 170, 150, 25);
+    for (int i = 0; i < availableDatabases.size(); i++)
+    {
+        rmPlayerFromDbBox->addItem(availableDatabases[i].c_str());
+    }
+    rmPlayerFromDbBox->setCurrentText(getSelectedDatabase().c_str());
+    rmPlayerFromDbBox->show();
+
+    std::vector<std::string> playersInDatabase = db.getAllAvailablePlayersInDatabase(rmPlayerFromDbBox->currentText().toStdString());
+    rmPlayerFromDbName = new QComboBox(rmPlayerRequestBox);
+    rmPlayerFromDbName->setGeometry(300, 170, 150, 25);
+    for (int i = 0; i < playersInDatabase.size(); i++)
+    {
+        rmPlayerFromDbName->addItem(playersInDatabase[i].c_str());
+    }
+    rmPlayerFromDbName->show();
+
+    addPlayerInDbOk = new QPushButton("Ok", rmPlayerRequestBox);
+    addPlayerInDbOk->setGeometry(100, 240, 50, 25);
+
+    addPlayerInDbCancel = new QPushButton("Cancel", rmPlayerRequestBox);
+    addPlayerInDbCancel->setGeometry(350, 240, 50, 25);
+
+    QObject::connect(addPlayerInDbOk, SIGNAL(clicked()), this, SLOT(rmPlayer()));
+    QObject::connect(addPlayerInDbCancel, SIGNAL(clicked()), this, SLOT(deleteRmPlayer()));
+    QObject::connect(rmPlayerFromDbBox, SIGNAL(currentTextChanged(QString)), this, SLOT(reloadRmPlayerFromDbName(QString)));
+
+    rmPlayerRequestBox->exec();
 }
+
+void seeOptionsWindow::rmPlayer()
+{
+    db.removePlayerFromDatabase(rmPlayerFromDbBox->currentText().toStdString(), rmPlayerFromDbName->currentText().toStdString());
+    deleteAddPlayer();
+    addPlayerInDB();
+}
+
+void seeOptionsWindow::deleteRmPlayer()
+{
+    rmPlayerRequestBox->close();
+    delete rmPlayerRequestBox, rmPlayerFromDbBox, rmPlayerFromDbName, rmPlayerFromDbOk, rmPlayerFromDbCancel;
+}
+
+void seeOptionsWindow::reloadRmPlayerFromDbName(QString Str)
+{
+    rmPlayerFromDbName->hide();
+    std::vector<std::string> playersInDatabase = db.getAllAvailablePlayersInDatabase(rmPlayerFromDbBox->currentText().toStdString());
+    rmPlayerFromDbName = new QComboBox(rmPlayerRequestBox);
+    rmPlayerFromDbName->setGeometry(300, 180, 200, 25);
+    for (int i = 0; i < playersInDatabase.size(); i++)
+    {
+        rmPlayerFromDbName->addItem(playersInDatabase[i].c_str());
+    }
+    rmPlayerFromDbName->show();
+}
+
+
 
 void seeOptionsWindow::setDatabase(QString QStr)
 {
@@ -171,4 +279,19 @@ void seeOptionsWindow::returnMainMenuFromOptions()
 
     emit close_me();
     close();
+}
+
+std::vector<std::string> seeOptionsWindow::separateStringForVector(std::string str)
+{
+    std::vector<std::string> vector;
+    std::string delimiter = "\n", token;
+    size_t pos = 0;
+    
+    while ((pos = str.find(delimiter)) != std::string::npos) {
+        token = str.substr(0, pos);
+        vector.push_back(token);
+        str.erase(0, pos + delimiter.length());
+    }
+    vector.push_back(str);
+    return vector;
 }

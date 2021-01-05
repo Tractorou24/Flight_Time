@@ -8,6 +8,8 @@
 #include <QDialog>
 #include <QComboBox>
 #include <QLineEdit>
+#include <QTextEdit>
+#include <vector>
 #include "database.h"
 
 class seeOptionsWindow : public QDialog
@@ -27,9 +29,17 @@ private slots:
     void deleteDeleteDB();
 
     void addPlayerInDB();
+    void addPlayer();
+    void deleteAddPlayer();
+
     void rmPlayerFromDB();
+    void rmPlayer();
+    void deleteRmPlayer();
+    void reloadRmPlayerFromDbName(QString Str);
+
     void returnMainMenuFromOptions();
     void setDatabase(QString QStr);
+    std::vector<std::string> separateStringForVector(std::string str);
 
 signals:
     void close_me();
@@ -60,6 +70,22 @@ private:
     QComboBox* rmDbBox;
     QPushButton* RmDbOk;
     QPushButton* RmDbCancel;
+
+    //ADD PLAYER
+    QDialog* addPlayerRequestBox;
+    QComboBox* addPlayerInDbBox;
+    QPushButton* addPlayerInDbOk;
+    QPushButton* addPlayerInDbCancel;
+    QTextEdit* addPlayerInfosTextBox;
+    QLineEdit* addPlayerPlayerName;
+    std::vector<std::string> addPlayerPlayerInfos;
+
+    //RM PLAYER
+    QDialog* rmPlayerRequestBox;
+    QComboBox* rmPlayerFromDbBox;
+    QComboBox* rmPlayerFromDbName;
+    QPushButton* rmPlayerFromDbOk;
+    QPushButton* rmPlayerFromDbCancel;
 };
 
 #endif
