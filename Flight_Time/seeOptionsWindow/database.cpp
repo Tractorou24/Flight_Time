@@ -101,6 +101,7 @@ std::string database::addPlayerToDatabase(std::string databaseName, std::string 
     file << "       allTime = 0.0" << std::endl;
     file << "       dayTime = 0.0" << std::endl;
     file << "       nightTime = 0.0" << std::endl;
+    file << "       instrumentsTime = 0.0" << std::endl;
     file << "       totalAA = 0.0" << std::endl;
     file << "       totalAG = 0.0" << std::endl;
     file << "   }" << std::endl;
@@ -203,6 +204,10 @@ std::string database::addAnHourInDatabase(std::string databaseName, std::string 
     else if (parameter == "nightTime")
     {
         player.nightTime += nbHour;
+    }
+    else if (parameter == "instrumentsTime")
+    {
+        player.instrumentsTime += nbHour;
     }
     else if (parameter == "totalAA")
     {
@@ -419,64 +424,67 @@ std::string database::loadPlayer(std::string databaseName, std::string playerNam
             else if (playerLineCounter == endLineOfInformations + 4) { // nightTime
                 player.nightTime = stod(line.substr(19, line.length() - 19));
             }
-            else if (playerLineCounter == endLineOfInformations + 5) { // totalAA
+            else if (playerLineCounter == endLineOfInformations + 5) { // instrumentsTime
+                player.instrumentsTime = stod(line.substr(25, line.length() - 25));
+            }
+            else if (playerLineCounter == endLineOfInformations + 6) { // totalAA
                 player.totalAA = stod(line.substr(17, line.length() - 17));
             }
-            else if (playerLineCounter == endLineOfInformations + 6) { // totalAG
+            else if (playerLineCounter == endLineOfInformations + 7) { // totalAG
                 player.totalAG = stod(line.substr(17, line.length() - 17));
             }
-            else if (playerLineCounter == endLineOfInformations + 8) { // caseIDeparture
+            else if (playerLineCounter == endLineOfInformations + 9) { // caseIDeparture
                 player.caseIDeparture = line.substr(20, line.length() - 20);
             }
-            else if (playerLineCounter == endLineOfInformations + 9) { // caseIIorIIIDeparture
+            else if (playerLineCounter == endLineOfInformations + 10) { // caseIIorIIIDeparture
                 player.caseIIorIIIDeparture = line.substr(26, line.length() - 26);
             }
-            else if (playerLineCounter == endLineOfInformations + 10) { // caseIArrival
+            else if (playerLineCounter == endLineOfInformations + 11) { // caseIArrival
                 player.caseIArrival = line.substr(18, line.length() - 18);
             }
-            else if (playerLineCounter == endLineOfInformations + 11) { // caseIIorIIIArrival
+            else if (playerLineCounter == endLineOfInformations + 12) { // caseIIorIIIArrival
                 player.caseIIorIIIArrival = line.substr(24, line.length() - 24);
             }
-            else if (playerLineCounter == endLineOfInformations + 12) { // bvr
+            else if (playerLineCounter == endLineOfInformations + 13) { // bvr
                 player.bvr = line.substr(9, line.length() - 9);
             }
-            else if (playerLineCounter == endLineOfInformations +13) { // bfm
+            else if (playerLineCounter == endLineOfInformations +14) { // bfm
                 player.bfm = line.substr(9, line.length() - 9);
             }
-            else if (playerLineCounter == endLineOfInformations + 14) { // AAGuns
+            else if (playerLineCounter == endLineOfInformations + 15) { // AAGuns
                 player.AAGuns = line.substr(12, line.length() - 12);
             }
-            else if (playerLineCounter == endLineOfInformations + 15) { // intercept
+            else if (playerLineCounter == endLineOfInformations + 16) { // intercept
                 player.intercept = line.substr(15, line.length() - 15);
             }
-            else if (playerLineCounter == endLineOfInformations + 16) { // dayAAR
+            else if (playerLineCounter == endLineOfInformations + 17) { // dayAAR
                 player.dayAAR = line.substr(12, line.length() - 12);
             }
-            else if (playerLineCounter == endLineOfInformations + 17) { // nightAAR
+            else if (playerLineCounter == endLineOfInformations + 18) { // nightAAR
                 player.nightAAR = line.substr(14, line.length() - 14);
             }
-            else if (playerLineCounter == endLineOfInformations + 18) { // laserGuidedBombs
+            else if (playerLineCounter == endLineOfInformations + 19) { // laserGuidedBombs
                 player.laserGuidedBombs = line.substr(22, line.length() - 22);
             }
-            else if (playerLineCounter == endLineOfInformations + 19) { // unguidedBombs
+            else if (playerLineCounter == endLineOfInformations + 20) { // unguidedBombs
                 player.unguidedBombs = line.substr(19, line.length() - 19);
             }
-            else if (playerLineCounter == endLineOfInformations + 20) { // tald
+            else if (playerLineCounter == endLineOfInformations + 21) { // tald
                 player.tald = line.substr(10, line.length() - 10);
             }
-            else if (playerLineCounter == endLineOfInformations + 21) { // rockets
+            else if (playerLineCounter == endLineOfInformations + 22) { // rockets
                 player.rockets = line.substr(13, line.length() - 13);
             }
-            else if (playerLineCounter == endLineOfInformations + 22) { // AGGuns
+            else if (playerLineCounter == endLineOfInformations + 23) { // AGGuns
                 player.AGGuns = line.substr(12, line.length() - 12);
             }
-            else if (playerLineCounter == endLineOfInformations + 23) { // tacturn
+            else if (playerLineCounter == endLineOfInformations + 24) { // tacturn
                 player.tacturn = line.substr(13, line.length() - 13);
             }
-            else if (playerLineCounter == endLineOfInformations + 24) { // training
+            else if (playerLineCounter == endLineOfInformations + 25) { // training
                 player.training = line.substr(14, line.length() - 14);
             }
-            else if (playerLineCounter == endLineOfInformations + 25) { // missions
+            else if (playerLineCounter == endLineOfInformations + 26) { // missions
                 player.missions = line.substr(14, line.length() - 14);
             }
             playerLineCounter++;
@@ -525,6 +533,7 @@ std::string database::updatePlayer(std::string databaseName, std::string playerN
     file << "       allTime = " + std::to_string(player.allTime) << std::endl;
     file << "       dayTime = " + std::to_string(player.dayTime) << std::endl;
     file << "       nightTime = " + std::to_string(player.nightTime) << std::endl;
+    file << "       instrumentsTime = " + std::to_string(player.instrumentsTime) << std::endl;
     file << "       totalAA = " + std::to_string(player.totalAA) << std::endl;
     file << "       totalAG = " + std::to_string(player.totalAG) << std::endl;
     file << "   }" << std::endl;

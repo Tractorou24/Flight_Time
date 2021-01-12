@@ -233,8 +233,8 @@ void seeOptionsWindow::rmPlayerFromDB()
 void seeOptionsWindow::rmPlayer()
 {
     db.removePlayerFromDatabase(rmPlayerFromDbBox->currentText().toStdString(), rmPlayerFromDbName->currentText().toStdString());
-    deleteAddPlayer();
-    addPlayerInDB();
+    deleteRmPlayer();
+    rmPlayerFromDB();
 }
 
 void seeOptionsWindow::deleteRmPlayer()

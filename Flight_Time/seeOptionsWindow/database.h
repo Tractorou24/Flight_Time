@@ -30,6 +30,7 @@ private:
 		double allTime;
 		double dayTime;
 		double nightTime;
+		double instrumentsTime;
 		double totalAA;
 		double totalAG;
 
