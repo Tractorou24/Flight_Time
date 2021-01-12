@@ -265,6 +265,7 @@ void seeOptionsWindow::setDatabase(QString QStr)
 
 void seeOptionsWindow::returnMainMenuFromOptions()
 {
+    close();
     delete gridLayout;
     delete pixmap_img;
     delete label;
@@ -278,7 +279,6 @@ void seeOptionsWindow::returnMainMenuFromOptions()
     delete returnMain;
 
     emit close_me();
-    close();
 }
 
 std::vector<std::string> seeOptionsWindow::separateStringForVector(std::string str)
