@@ -24,13 +24,7 @@ std::string getSelectedDatabase()
     }
     file.close();
     line = line.substr(20, line.length() - 20);
-    
-    database db;
-    if (db.dbExist(line))
-    {
-        return line;
-    }
-    return "DATABASE DO NOT EXIST";
+    return line;
 }
 
 std::string setSelectedDatabase(std::string str)

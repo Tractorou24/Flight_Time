@@ -171,7 +171,7 @@ std::string database::removePlayerFromDatabase(std::string databaseName, std::st
     outfile.close();
 
     const std::string backupPath = "temp/tempDB.txt";
-    const std::string newPath = "config/databases/VF84.txt";
+    const std::string newPath = "config/databases/" + databaseName + ".txt";
     std::remove(newPath.c_str());
     std::filesystem::copy_file(backupPath, newPath);
     std::remove(backupPath.c_str());

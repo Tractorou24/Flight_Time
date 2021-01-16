@@ -37,13 +37,11 @@ void mainWindow::addHours()
     setHourWindow = new setHoursWindow(this);
     QObject::connect(setHourWindow, SIGNAL(close_me()), this, SLOT(closeChild()));
     showAddHours = true;
-    this->hide();
 
     while (showAddHours)
     {
         setHourWindow->exec();
     }
-    this->show();
     delete setHourWindow;
 }
 
@@ -59,13 +57,11 @@ void mainWindow::showHours()
     seeHourWindow = new seeHoursWindow(this);
     QObject::connect(seeHourWindow, SIGNAL(close_me()), this, SLOT(closeChild()));
     showSeeHours = true;
-    this->hide();
 
     while (showSeeHours)
     {
         seeHourWindow->exec();
     }
-    this->show();
     delete seeHourWindow;
 }
 
@@ -74,13 +70,11 @@ void mainWindow::seeOptions()
     seeOptionWindow = new seeOptionsWindow(this);
     QObject::connect(seeOptionWindow, SIGNAL(close_me()), this, SLOT(closeChild()));
     showSeeOptions = true;
-    this->hide();
 
     while (showSeeOptions)
     {
         seeOptionWindow->exec();
     }
-    this->show();
     delete seeOptionWindow;
 }
 
