@@ -27,6 +27,9 @@ setHoursWindow::setHoursWindow(QWidget* parent)
     createChoiceCheckBox();
     createHoursBoxes();
 
+    db.addAnHourInDatabase("VF84", "200 Bullit", "allTime", 2.0);
+    db.addAnHourInDatabase("VF84", "206 Orion", "allTime", 2.0);
+
     // Buttons
     validate = new QPushButton("Valider", this);
     validate->setGeometry(0, 670, 100, 50);
@@ -48,9 +51,8 @@ void setHoursWindow::validateInformations() {
             db.addADateInDatabase((selectedDBBox->currentText()).toStdString(), playersChecked[i], activitiesChecked[j], db.getNewDate());
         }
         for (auto& [key, value] : hoursTextBoxes) {
-            if (hoursTextBoxes[key]->isModified()) {
-                std::cout << (selectedDBBox->currentText()).toStdString() + "    " + playersChecked[i] + "    " + key + "    " <<stod( hoursTextBoxes[key]->text().toStdString()) << std::endl;
-                db.addAnHourInDatabase((selectedDBBox->currentText()).toStdString(), playersChecked[i], key, stod(hoursTextBoxes[key]->text().toStdString()));
+            if (value->isModified()) {
+                db.addAnHourInDatabase((selectedDBBox->currentText()).toStdString(), playersChecked[i], key, value->text().toDouble());
             }
         }
     }
@@ -67,7 +69,6 @@ void setHoursWindow::returnMainMenuFromSetHours()
 
     emit close_me();
 }
-
 
 
 void setHoursWindow::createNameCheckBoxes(std::string databaseName)

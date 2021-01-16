@@ -558,6 +558,8 @@ std::string database::updatePlayer(std::string databaseName, std::string playerN
     file << "   missions = " + player.missions << std::endl;
     file << "}" << std::endl << std::endl;;
 
+    player.informations.clear();
+
     file.close();
     return "OK";
 }
